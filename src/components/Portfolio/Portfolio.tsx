@@ -1,16 +1,51 @@
-import React, { FC, useState } from 'react';
+import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 import './Portfolio.css';
 import arrowBottom from '../../assets/images/arrow-bottom.svg';
+import arrowRight from '../../assets/images/arrow-black-right.svg';
 
-export const Portfolio: FC = () => {
+enum ArrowScroll {
+  'down' = 'down',
+  'up' = 'up',
+}
+
+export const Portfolio: FC = memo(() => {
   const [darkTheme, setDarkTheme] = useState(false);
-  const toggleTheme = () => {
-    setDarkTheme(!darkTheme);
+  const [burger, setBurger] = useState(false);
+  const [handleArrows, setHandleArrows] = useState(ArrowScroll.down);
+
+  const scrollHandler = (e: DocumentEventMap['scroll']) => {
+    const target = e.target as Document;
+    const screenBottom =
+      target.documentElement.scrollHeight -
+        (target?.documentElement?.scrollTop + window.innerHeight) <
+      150;
+    if (screenBottom) {
+      setHandleArrows(ArrowScroll.up);
+    } else {
+      setHandleArrows(ArrowScroll.down);
+    }
   };
+
+  useEffect(() => {
+    document.addEventListener('scroll', scrollHandler);
+    return () => {
+      document.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    setDarkTheme(!darkTheme);
+  }, [darkTheme]);
+
+  const toggleBurgerMenu = useCallback(() => {
+    setBurger(!burger);
+  }, [burger]);
+
   const theme = darkTheme ? 'wrapper dark-theme' : 'wrapper';
+  const isBurgerOpen = burger ? 'menu-open' : '';
   return (
     <div className={theme}>
-      <header>
+      <header className={isBurgerOpen}>
         <div className="heading">
           <h1 className="gradient-text">portfolio</h1>
           <div className="wrap-btn">
@@ -19,13 +54,13 @@ export const Portfolio: FC = () => {
             </button>
           </div>
         </div>
-        <div className="burger-logo-container">
-          <a href="#" className="burger-menu-button">
+        <div className="burger-logo-container" onClick={toggleBurgerMenu}>
+          <a className="burger-menu-button">
             <span className="burger-menu-lines"></span>
           </a>
         </div>
         <nav className="nav">
-          <ul>
+          <ul onClick={toggleBurgerMenu}>
             <li className="nav-item">
               <a className="nav-item-link" href="#skills">
                 Skills
@@ -56,11 +91,7 @@ export const Portfolio: FC = () => {
                 className="nav-item-link email"
                 href="mailto:andrey.ivanov688@gmail.com">
                 email me
-                <img
-                  className="arrow"
-                  src={'../../assets/images/arrow-black-right.svg'}
-                  alt=""
-                />
+                <img className="arrow" src={arrowRight} alt="" />
               </a>
             </li>
           </ul>
@@ -122,14 +153,162 @@ export const Portfolio: FC = () => {
             </a>
           </li>
         </ul>
-        <div className="scroll" id="scroll-h">
-          <span className="scroll-text">
-            Scroll
-            <img className="arrow-bottom" src={arrowBottom} alt="" />
-          </span>
-        </div>
+        {handleArrows === 'down' && (
+          <div className="scroll" id="scroll-h">
+            <span className="scroll-text">
+              Scroll
+              <img className="arrow-bottom" src={arrowBottom} alt="" />
+            </span>
+          </div>
+        )}
       </header>
       <section className="parallax"></section>
+      <section className="skills" id="skills">
+        <h2 className="skills-head">SKILLS</h2>
+        <ul>
+          <li className="skills-list">
+            HTML/CSS
+            <span className="html-css progress"></span>
+          </li>
+          <li className="skills-list">
+            Responsive layout
+            <span className="responsive progress"></span>
+          </li>
+          <li className="skills-list">
+            Bootstrap
+            <span className="bootstrap progress"></span>
+          </li>
+          <li className="skills-list">
+            jQuery
+            <span className="jquery progress"></span>
+          </li>
+          <li className="skills-list">
+            CSS Preprocessors
+            <span className="preprpocessors progress"></span>
+          </li>
+          <li className="skills-list">
+            gulp
+            <span className="gulp progress"></span>
+          </li>
+          <li className="skills-list">
+            Git
+            <span className="git progress"></span>
+          </li>
+        </ul>
+      </section>
+      <section className="projects" id="projects">
+        <div className="projects-text">
+          <h2 className="projects-head">PROJECTS</h2>
+          <dl>
+            <dt className="term">Mylib</dt>
+            <dd className="description">
+              Component library with html and css code examples
+            </dd>
+            <a
+              className="git-link"
+              href="https://github.com/Andrey-Ionel/MyLib">
+              githab
+              <svg
+                className="svg-color"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="4"
+                fill="none"
+                viewBox="0 0 16 4">
+                <g clipPath="url(#prefix__clip0)">
+                  <path
+                    fill="#F92672"
+                    d="M11.598.016c.107-.026.223-.016.313.026l3.428 1.823c.054.03.09.072.09.12 0 .046-.036.093-.09.124l-3.428 1.85c-.09.041-.206.051-.313.025-.098-.026-.17-.083-.17-.15V2.666H.287C.125 2.667 0 2.594 0 2.5v-1c0-.094.125-.167.286-.167h11.143V.167c0-.068.062-.125.17-.151z"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="prefix__clip0">
+                    <path
+                      fill="#fff"
+                      d="M0 4H4V20H0z"
+                      transform="rotate(-90 0 4)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+            <dt className="term">Adaptive Layout Example</dt>
+            <dd className="description">html page with burger menu</dd>
+            <a
+              className="git-link"
+              href="https://github.com/Andrey-Ionel/Responsive">
+              githab
+              <svg
+                className="svg-color"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="4"
+                fill="none"
+                viewBox="0 0 16 4">
+                <g clipPath="url(#prefix__clip0)">
+                  <path
+                    fill="#F92672"
+                    d="M11.598.016c.107-.026.223-.016.313.026l3.428 1.823c.054.03.09.072.09.12 0 .046-.036.093-.09.124l-3.428 1.85c-.09.041-.206.051-.313.025-.098-.026-.17-.083-.17-.15V2.666H.287C.125 2.667 0 2.594 0 2.5v-1c0-.094.125-.167.286-.167h11.143V.167c0-.068.062-.125.17-.151z"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="prefix__clip0">
+                    <path
+                      fill="#fff"
+                      d="M0 4H4V20H0z"
+                      transform="rotate(-90 0 4)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </dl>
+        </div>
+      </section>
+      <section className="experience" id="experience">
+        <h2 className="experience-head">EXPERIENCE</h2>
+        <dl>
+          <span className="period">august 2020 - november 2020</span>
+          <dt className="term-exp">IT school Hillel</dt>
+          <dd className="description-exp">Front-end basic course</dd>
+          <a
+            className="certificate-link"
+            href="https://certificate.ithillel.ua/view/41591647/ru">
+            certificate
+          </a>
+          <span className="period">december 2020 - now</span>
+          <dt className="term-exp">IT school Hillel</dt>
+          <dd className="description-exp">Front-end pro course</dd>
+          <a className="certificate-link" href="#">
+            certificate
+          </a>
+        </dl>
+      </section>
+      <footer>
+        <div className="contact">
+          <span className="footer-email-text">Whant to collaborate?</span>
+          <a className="footer-email" href="mailto:andrey.ivanov688@gmail.com">
+            email me
+            <img className="arrow" src={arrowRight} alt={''} />
+          </a>
+        </div>
+        <a className="footer-telephone" href="tel:+38 063 688 14 26">
+          +38 063 688 14 26
+        </a>
+        {handleArrows === 'up' && (
+          <div className="up">
+            <a href="#root">
+              <span className="up-text">
+                UP
+                <img className="arrow-up" src={arrowRight} alt={''} />
+              </span>
+            </a>
+          </div>
+        )}
+      </footer>
+      <button onClick={toggleTheme} className="custom-button">
+        <span>Custom button</span>
+      </button>
     </div>
   );
-};
+});

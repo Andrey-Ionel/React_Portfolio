@@ -1,3 +1,6 @@
+#root {
+    overflow-x: hidden;
+}
 .wrapper {
     margin: 0;
     background-color: #fff;
@@ -126,7 +129,6 @@
     padding-top: 40px;
     position: fixed;
     background-color: #56caa5;
-    overflow: auto;
     left: -200%;
     width: 500px;
     height: inherit;
@@ -143,19 +145,22 @@
     align-items: center;
 }
 .nav .nav-item .nav-item-link {
-    padding: 16px 0 0;
-    margin-bottom: 16px;
+    margin-bottom: 25px;
     height: 100%;
     font: 32px Roboto, Arial, sans-serif;
     font-weight: 900;
     color: #272822;
-    opacity: 0.8;
+    opacity: 1;
     text-decoration: none;
     cursor: pointer;
-    border-bottom: 2px solid transparent;
+    background: linear-gradient(to bottom, transparent 0%, transparent 90%, #f92672 100%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    background-repeat: no-repeat;
+    transition: all 0.3s linear;
 }
 .nav .nav-item .nav-item-link:hover {
-    border-bottom: 2px solid #f92672;
+    background-position: 100% 0;
 }
 .nav .nav-item .nav-item-link .arrow {
     padding: 5px;
@@ -163,7 +168,7 @@
 .nav .nav-item .nav-item-link.telephone {
     font-size: 18px;
     padding: 80px 0;
-    border: none;
+    background-position: 200% 0;
 }
 .nav .nav-item .email-text {
     color: #f92672;
@@ -347,7 +352,7 @@ header:hover:hover .info-text {
     border: 1px solid #001d2c;
 }
 
-.dark-theme .btn:hover .btn-span, .dark-theme .btn:focus .btn-span {
+.dark-theme .btn-span, .dark-theme .btn:focus .btn-span {
     background-color: #003854;
 }
 
@@ -382,13 +387,486 @@ header:hover:hover .info-text {
 .parallax {
     height: calc(100vh - 160px);
     margin: 0 0 80px;
-    background: url(../../assets/images/parallax.svg) no-repeat;
+    background: url(../../assets/images/parallax.svg) no-repeat fixed center;
+    background-size: cover; }
+
+.dark-theme .parallax {
+    background: url(../../assets/images/dark.jpg) no-repeat fixed center;
+    background-size: cover; }
+
+.skills {
+    margin: 0 0 80px;
+    background-color: #dbffd7;
+    padding: 80px;
+    position: relative; }
+.skills:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 100px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    right: 0;
+    top: 0; }
+.skills .skills-head {
+    font-size: 80px;
+    font-weight: 900; }
+.skills .skills-list {
+    padding-top: 32px;
+    font-size: 32px;
+    position: relative; }
+.skills .skills-list .progress {
+    width: 14px;
+    height: 14px;
+    background-color: #f92672;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    border-radius: 15px;
+    transition: 1s; }
+.skills .skills-list:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid #f92672;
+    border-width: 7px 600px 7px 7px;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    border-radius: 15px;
+    opacity: 0;
+    transition: 0.5s; }
+
+.skills:hover .skills-list:after {
+    opacity: 0.2;
+    transition: 0.5s; }
+
+.skills:hover .skills-list .html-css {
+    width: 600px;
+    transition: 1s; }
+
+.skills:hover .skills-list .responsive {
+    width: 400px;
+    transition: 1s; }
+
+.skills:hover .skills-list .bootstrap {
+    width: 350px;
+    transition: 1s; }
+
+.skills:hover .skills-list .jquery {
+    width: 250px;
+    transition: 1s; }
+
+.skills:hover .skills-list .preprpocessors {
+    width: 400px;
+    transition: 1s; }
+
+.skills:hover .skills-list .gulp {
+    width: 380px;
+    transition: 1s; }
+
+.skills:hover .skills-list .git {
+    width: 500px;
+    transition: 1s; }
+
+.dark-theme .skills {
+    background-color: #8e95a7; }
+.dark-theme .skills .skills-list .progress {
+    background-color: #fff; }
+.dark-theme .skills .skills-list:after {
+    border: solid #fff;
+    border-width: 7px 600px 7px 7px; }
+
+.projects {
+    margin: 0 0 80px;
+    background: url(../../assets/images/parallax2.png) no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; }
+.projects .projects-text {
+    padding: 80px;
+    font-size: 32px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #353535;
+    opacity: 0;
+    transition: 2s; }
+.projects .projects-text .projects-head {
+    font-size: 80px;
+    font-weight: 900;
+    color: #56caa5; }
+.projects .projects-text .term {
+    padding: 80px 0 40px;
+    font-weight: 900; }
+.projects .projects-text .git-link {
+    color: #f92672;
+    font-size: 18px;
+    font-style: italic; }
+
+.dark-theme .projects .projects-text .projects-head {
+    color: #8e95a7; }
+
+.dark-theme .projects .projects-text .git-link {
+    color: #8e95a7; }
+.dark-theme .projects .projects-text .git-link .svg-color * {
+    fill: #8e95a7; }
+
+.projects:hover .projects-text {
+    opacity: 1;
+    transition: 2s; }
+
+.dark-theme .projects {
+    background: url(../../assets/images/web-dark2.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover; }
 
-.dark-theme .parallax {
-    background: url(../../assets/images/dark.jpg) no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover; }
+.experience {
+    margin: 0 0 80px;
+    background-color: #dbffd7;
+    padding: 80px;
+    position: relative;
+    font-size: 32px;
+}
+.experience:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 100px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.experience .experience-head {
+    font-size: 80px;
+    font-weight: 900;
+}
+.experience .period {
+    display: block;
+    color: #f92672;
+    font-size: 18px;
+    font-style: italic;
+    padding: 80px 0 0;
+}
+.experience .term-exp {
+    font-weight: 900;
+    line-height: 38px;
+}
+.experience .certificate-link {
+    display: block;
+    color: #f92672;
+    font-size: 18px;
+    font-style: italic;
+    padding-top: 40px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+footer .contact .footer-email-text {
+    display: block;
+    color: #f92672;
+    font-style: italic;
+}
+footer .contact .footer-email {
+    font: 32px Roboto, Arial, sans-serif;
+    font-weight: 900;
+    color: #272822;
+    text-decoration: none;
+    background: linear-gradient(to bottom, transparent 0%, transparent 90%, #f92672 100%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    background-repeat: no-repeat;
+    transition: all 0.3s linear;
+}
+footer .contact .footer-email:hover {
+    background-position: 100% 0;
+}
+footer .contact .footer-email .arrow {
+    padding: 5px;
+}
+footer .footer-telephone {
+    padding-top: 35px;
+    text-decoration: none;
+    color: #272822;
+}
+footer .up {
+    position: absolute;
+    bottom: 30px;
+    left: -70px;
+    transition: 2.5s;
+}
+footer .up a {
+    text-decoration: none;
+    color: #272822;
+}
+footer .up a .up-text {
+    display: block;
+    transform: rotate(-90deg);
+}
+footer .up a .up-text .arrow-up {
+    padding: 0 0 2px 10px;
+}
+
+.dark-theme .experience {
+    background-color: #8e95a7;
+}
+.dark-theme .experience .period {
+    color: #fff;
+}
+.dark-theme .experience .certificate-link {
+    color: #fff;
+}
+
+.dark-theme footer .contact .footer-email-text {
+    color: #8e95a7;
+}
+
+/* tablet */
+@media only screen and (min-width: 767px) and (max-width: 1150px) {
+    header:before {
+        display: none;
+    }
+    header:hover .hero {
+        height: 70%;
+        transition: 2s ease;
+    }
+    header:hover .hero-text {
+        transform: rotate(-90deg);
+        margin: -35px 0 0 -280px;
+        transition: 2s ease;
+    }
+    .hero {
+        transition: height 0.8s, width 2s;
+    }
+    .skills .skills-list .progress {
+        bottom: -25px;
+        left: 40%;
+    }
+    .skills .skills-list:after {
+        border-width: 7px 300px 7px 7px;
+        bottom: -25px;
+        left: 40%;
+    }
+    .dark-theme .skills .skills-list:after {
+        border: solid #fff;
+        border-width: 7px 300px 7px 7px;
+    }
+    .skills:hover .skills-list .html-css {
+        width: 300px;
+    }
+    .skills:hover .skills-list .responsive {
+        width: 200px;
+    }
+    .skills:hover .skills-list .bootstrap {
+        width: 175px;
+    }
+    .skills:hover .skills-list .jquery {
+        width: 125px;
+    }
+    .skills:hover .skills-list .preprpocessors {
+        width: 200px;
+    }
+    .skills:hover .skills-list .gulp {
+        width: 190px;
+    }
+    .skills:hover .skills-list .git {
+        width: 250px;
+    }
+}
+
+/* mobile */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .wrapper {
+        min-width: 320px;
+        padding: 60px;
+    }
+    header:before {
+        display: none;
+    }
+    header:hover .hero {
+        height: 70%;
+        transition: 2s ease;
+    }
+    header:hover .hero-text {
+        transform: rotate(-90deg);
+        margin: -14px 0 0 -105px;
+        transition: 2s ease;
+    }
+    .hero {
+        opacity: 0.3;
+        transition: 2s ease;
+    }
+    .hero-text {
+        display: block;
+        width: 180px;
+        font-size: 28px;
+        margin: -14px 0 0 -80px;
+        top: 30%;
+        transition: height 0.8s, width 2s, transform 2s;
+    }
+    .hero:after {
+        display: none;
+    }
+    .info-text {
+        opacity: 1;
+        width: 200px;
+    }
+    .burger-menu-button {
+        top: 10%;
+        z-index: 40;
+        width: 48px;
+        height: 48px;
+        margin: 0; }
+    .nav {
+        width: 300px;
+        padding-top: 20px;
+    }
+    .nav .nav-item .nav-item-link {
+        font: 28px Roboto, Arial, sans-serif;
+    }
+    .nav .nav-item .nav-item-link.telephone {
+        font-size: 16px;
+        padding: 40px 0;
+    }
+    .menu-open .nav {
+        width: 300px;
+    }
+    .links {
+        right: 18px;
+    }
+    .parallax {
+        background-position: 100%;
+    }
+    .skills {
+        padding: 40px 10px;
+    }
+    .skills:after {
+        display: none;
+    }
+    .skills .skills-head {
+        font-size: 28px;
+        font-weight: 900;
+    }
+    .skills .skills-list {
+        padding-top: 32px;
+        font-size: 14px;
+        position: relative;
+    }
+    .skills .skills-list .progress {
+        width: 10px;
+        height: 10px;
+        bottom: -25px;
+        left: 20%;
+    }
+    .skills .skills-list:after {
+        display: none;
+    }
+    .dark-theme .skills .skills-list:after {
+        display: none;
+    }
+    .skills:hover .skills-list .html-css {
+        width: 70%;
+    }
+    .skills:hover .skills-list .responsive {
+        width: 40%;
+    }
+    .skills:hover .skills-list .bootstrap {
+        width: 35%;
+    }
+    .skills:hover .skills-list .jquery {
+        width: 30%;
+    }
+    .skills:hover .skills-list .preprpocessors {
+        width: 40%;
+    }
+    .skills:hover .skills-list .gulp {
+        width: 37%;
+    }
+    .skills:hover .skills-list .git {
+        width: 55%;
+    }
+    .projects {
+        background-position: 103%;
+    }
+    .projects .hover-projects {
+        right: 10px;
+    }
+    .projects .projects-text {
+        padding: 40px 10px;
+        font-size: 14px;
+    }
+    .projects .projects-text .projects-head {
+        font-size: 28px;
+        font-weight: 900;
+    }
+    .projects .projects-text .term {
+        padding: 80px 0 40px;
+        font-weight: 900;
+    }
+    .projects .projects-text .git-link {
+        font-size: 12px;
+    }
+    .experience {
+        padding: 40px 10px;
+        font-size: 14px;
+    }
+    .experience:after {
+        display: none;
+    }
+    .experience .experience-head {
+        font-size: 28px;
+    }
+    .experience .period {
+        font-size: 14px;
+    }
+    .experience .term-exp {
+        line-height: 14px;
+    }
+    .experience .certificate-link {
+        font-size: 12px;
+    }
+    footer .contact .footer-email {
+        font: 14px Roboto, Arial, sans-serif;
+    }
+    footer .contact .footer-email .arrow {
+        padding: 5px 5px 0;
+    }
+    footer .contact .footer-email-text {
+        font-size: 12px;
+    }
+    footer .footer-telephone {
+        font-size: 12px;
+        padding-top: 0;
+    }
+    footer .up a .up-text {
+        padding-left: 30px;
+    }
+}
+
+.custom-button {
+    margin: 10px;
+    padding: 15px 50px;
+    border:1px solid #33333320 ;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0feff;
+    box-shadow: 1px 1px 1px 1px #00000080;
+    transition: all .1s ease-in;
+}
+.custom-button:active {
+    background-color: #F0FEFFFF;
+    transform: scale(0.97);
+    box-shadow: none;
+}
