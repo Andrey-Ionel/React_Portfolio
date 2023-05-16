@@ -1,0 +1,68 @@
+.wrap-btn {
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*button style*/
+.btn {
+    color: #fff;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05em;
+    position: relative;
+    display: inline-block;
+    pointer-events: auto;
+    margin: 13px;
+}
+.btn .btn-span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-width: 6px;
+    padding: 6px;
+    border-radius: 8px;
+    background-color: #56caa5;
+    border: 1px solid #43c49b;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform .1s, box-shadow .2s, background-color .2s;
+}
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    border-radius: 12px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), inset 0 0 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow .1s;
+}
+.btn-span, .btn:focus .btn-span {
+    background-color: #62ceab;
+}
+.btn:active .btn-span {
+    background-color: #56caa5;
+    transform: scale(0.97);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.btn:active::after {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), inset -3px 3px 1em rgba(0, 0, 0, 0.2);
+}
+/*Dark theme*/
+.dark-theme .btn .dark-theme .btn-span {
+    background-color: #002e45;
+    border: 1px solid #001d2c;
+}
+.dark-theme .btn-span, .dark-theme .btn:focus .btn-span {
+    background-color: #003854;
+}
+.dark-theme .btn:active .btn-span {
+    background-color: #002e45;
+}

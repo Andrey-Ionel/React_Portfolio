@@ -1,0 +1,258 @@
+.skills {
+    margin: 0 0 80px;
+    background-color: #dbffd7;
+    padding: 80px;
+    position: relative;
+}
+.skills:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 100px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.skills .skills-head {
+    font-size: 80px;
+    font-weight: 900;
+}
+.skills .skills-list {
+    padding-top: 32px;
+    font-size: 32px;
+    position: relative;
+    transition: 1s;
+}
+.skills .skills-list .progress {
+    width: 14px;
+    height: 14px;
+    background-color: #f92672;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    border-radius: 15px;
+    transition: 1s;
+}
+.skills .skills-list:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid #f92672;
+    border-width: 7px 600px 7px 7px;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    border-radius: 15px;
+    opacity: 0;
+    transition: 0.5s;
+}
+.skills:hover .skills-list:after {
+    opacity: 0.2;
+    transition: 0.5s;
+}
+.skills:hover .skills-list .html-css {
+    width: 600px;
+}
+.skills:hover .skills-list .preprocessors {
+    width: 400px;
+}
+.skills:hover .skills-list .responsive {
+    width: 450px;
+}
+.skills:hover .skills-list .java-script {
+    width: 550px;
+}
+.skills:hover .skills-list .java {
+    width: 250px;
+}
+.skills:hover .skills-list .type-script {
+    width: 550px;
+}
+.skills:hover .skills-list .web-pack {
+    width: 480px;
+}
+.skills:hover .skills-list .git {
+    width: 500px;
+}
+.skills:hover .skills-list .react {
+    width: 550px;
+}
+.skills:hover .skills-list .react-native {
+    width: 580px;
+}
+.skills:hover .skills-list .redux-thunk {
+    width: 550px;
+}
+.skills:hover .skills-list .android-xcode {
+    width: 550px;
+}
+.skills:hover .skills-list .node-js {
+    width: 250px;
+}
+.skills:hover .skills-list .jira {
+    width: 550px;
+}
+.skills:hover .skills-list .figma {
+    width: 580px;
+}
+.skills:hover .skills-list .fetch-axios-graphql {
+    width: 580px;
+}
+/*Dark theme*/
+.dark-theme .skills {
+    background-color: #8e95a7;
+}
+.dark-theme .skills .skills-list .progress {
+    background-color: #fff;
+}
+.dark-theme .skills .skills-list:after {
+    border: solid #fff;
+    border-width: 7px 600px 7px 7px;
+}
+/* tablet */
+@media only screen and (min-width: 767px) and (max-width: 1150px) {
+    .skills .skills-list .progress {
+        bottom: -25px;
+        left: 40%;
+    }
+    .skills .skills-list:after {
+        border-width: 7px 300px 7px 7px;
+        bottom: -25px;
+        left: 40%;
+    }
+    .skills:hover .skills-list .html-css {
+        width: 300px;
+    }
+    .skills:hover .skills-list .preprocessors {
+        width: 200px;
+    }
+    .skills:hover .skills-list .responsive {
+        width: 200px;
+    }
+    .skills:hover .skills-list .java-script {
+        width: 275px;
+    }
+    .skills:hover .skills-list .java {
+        width: 125px;
+    }
+    .skills:hover .skills-list .type-script {
+        width: 275px;
+    }
+    .skills:hover .skills-list .web-pack {
+        width: 240px;
+    }
+    .skills:hover .skills-list .git {
+        width: 250px;
+    }
+    .skills:hover .skills-list .react {
+        width: 275px;
+    }
+    .skills:hover .skills-list .react-native {
+        width: 290px;
+    }
+    .skills:hover .skills-list .redux-thunk {
+        width: 275px;
+    }
+    .skills:hover .skills-list .android-xcode {
+        width: 275px;
+    }
+    .skills:hover .skills-list .node-js {
+        width: 125px;
+    }
+    .skills:hover .skills-list .jira {
+        width: 275px;
+    }
+    .skills:hover .skills-list .figma {
+        width: 290px;
+    }
+    .skills:hover .skills-list .fetch-axios-graphql {
+        width: 290px;
+    }
+    .dark-theme .skills .skills-list:after {
+        border: solid #fff;
+        border-width: 7px 300px 7px 7px;
+    }
+}
+/* mobile */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .skills {
+        padding: 40px 10px;
+    }
+    .skills:after {
+        display: none;
+    }
+    .skills .skills-head {
+        font-size: 28px;
+        font-weight: 900;
+    }
+    .skills .skills-list {
+        padding-top: 32px;
+        font-size: 14px;
+        position: relative;
+    }
+    .skills .skills-list .progress {
+        width: 10px;
+        height: 10px;
+        bottom: -25px;
+        left: 20%;
+    }
+    .skills .skills-list:after {
+        display: none;
+    }
+    .dark-theme .skills .skills-list:after {
+        display: none;
+    }
+    .skills:hover .skills-list .html-css {
+        width: 70%;
+    }
+    .skills:hover .skills-list .preprocessors {
+        width: 46%;
+    }
+    .skills:hover .skills-list .responsive {
+        width: 46%;
+    }
+    .skills:hover .skills-list .java-script {
+        width: 65%;
+    }
+    .skills:hover .skills-list .java {
+        width: 30%;
+    }
+    .skills:hover .skills-list .type-script {
+        width: 65%;
+    }
+    .skills:hover .skills-list .web-pack {
+        width: 55%;
+    }
+    .skills:hover .skills-list .git {
+        width: 60%;
+    }
+    .skills:hover .skills-list .react {
+        width: 65%;
+    }
+    .skills:hover .skills-list .react-native {
+        width: 70%;
+    }
+    .skills:hover .skills-list .redux-thunk {
+        width: 65%;
+    }
+    .skills:hover .skills-list .android-xcode {
+        width: 65%;
+    }
+    .skills:hover .skills-list .node-js {
+        width: 30%;
+    }
+    .skills:hover .skills-list .jira {
+        width: 65%;
+    }
+    .skills:hover .skills-list .figma {
+        width: 70%;
+    }
+    .skills:hover .skills-list .fetch-axios-graphql {
+        width: 70%;
+    }
+}
+

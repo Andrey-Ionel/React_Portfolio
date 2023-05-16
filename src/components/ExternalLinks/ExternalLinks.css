@@ -1,0 +1,23 @@
+.links {
+    position: fixed;
+    top: 0;
+    right: 25px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+}
+.links .link-item {
+    padding: 10px 0;
+}
+/*Dark theme*/
+.dark-theme .svg-fill * {
+    fill: #002e45;
+}
+/* mobile */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .links {
+        right: 18px;
+    }
+}

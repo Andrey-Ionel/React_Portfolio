@@ -1,0 +1,33 @@
+.scroll {
+    position: fixed;
+    bottom: 75px;
+    right: 2px;
+}
+.scroll .scroll-text {
+    display: block;
+    transform: rotate(90deg);
+}
+.scroll .scroll-text .arrow-bottom {
+    transform: rotate(-90deg);
+    padding: 10px 15px 0 0;
+}
+#scroll-h {
+    transition: 1s;
+}
+.up {
+    position: absolute;
+    bottom: 30px;
+    left: -70px;
+    transition: 2.5s;
+}
+.up a {
+    text-decoration: none;
+    color: #272822;
+}
+.up a .up-text {
+    display: block;
+    transform: rotate(-90deg);
+}
+.up a .up-text .arrow-up {
+    padding: 0 0 2px 10px;
+}

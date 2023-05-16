@@ -1,0 +1,55 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+footer .contact .footer-email-text {
+    display: block;
+    color: #f92672;
+    font-style: italic;
+}
+footer .contact .footer-email {
+    font: 32px Roboto, Arial, sans-serif;
+    font-weight: 900;
+    color: #272822;
+    text-decoration: none;
+    background: linear-gradient(to bottom, transparent 0%, transparent 90%, #f92672 100%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    background-repeat: no-repeat;
+    transition: all 0.3s linear;
+}
+footer .contact .footer-email:hover {
+    background-position: 100% 0;
+}
+footer .contact .footer-email .arrow {
+    padding: 5px;
+}
+footer .footer-telephone {
+    padding-top: 35px;
+    text-decoration: none;
+    color: #272822;
+}
+/*Dark theme*/
+.dark-theme footer .contact .footer-email-text {
+    color: #8e95a7;
+}
+/* mobile */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    footer .contact .footer-email {
+        font: 14px Roboto, Arial, sans-serif;
+    }
+    footer .contact .footer-email .arrow {
+        padding: 5px 5px 0;
+    }
+    footer .contact .footer-email-text {
+        font-size: 12px;
+    }
+    footer .footer-telephone {
+        font-size: 12px;
+        padding-top: 0;
+    }
+    footer .up a .up-text {
+        padding-left: 30px;
+    }
+}

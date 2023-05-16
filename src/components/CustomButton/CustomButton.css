@@ -1,0 +1,22 @@
+.custom-button {
+    margin: 10px;
+    padding: 15px 50px;
+    border:1px solid #33333320 ;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0feff;
+    box-shadow: 1px 1px 1px 1px #00000080;
+    transition: all .1s ease-in;
+}
+.custom-button:active {
+    background-color: #F0FEFFFF;
+    transform: scale(0.97);
+    box-shadow: none;
+}
+.custom-button-disabled {
+    background-color: #F0FEFFFF;
+    transform: scale(0.97);
+    box-shadow: none;
+}
