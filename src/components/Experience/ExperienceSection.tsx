@@ -42,7 +42,7 @@ const allExperience: Experience[] = [
 ];
 
 export const ExperienceSection: FC = () => {
-  const title = 'SKILLS';
+  const title = 'EXPERIENCE';
   const certificateText = 'certificate';
   return (
     <div className={'experience'} id={'experience'}>
@@ -54,7 +54,11 @@ export const ExperienceSection: FC = () => {
               <span className={'period'}>{exp.period}</span>
               <dt className={'term-exp'}>{exp.place}</dt>
               <dd className={'description-exp'}>{exp.naming}</dd>
-              <a className={'certificate-link'} href={exp.link}>
+              <a
+                className={'certificate-link'}
+                href={exp.link}
+                target={'_blank'}
+                rel={'noreferrer'}>
                 {!exp.isCommercial && certificateText}
               </a>
             </div>

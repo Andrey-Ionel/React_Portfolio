@@ -58,7 +58,7 @@ export const ExternalLinks: FC = () => {
       {externalLinksArray.map(link => {
         return (
           <li key={link.svgPath} className={'link-item'}>
-            <a href={link.link}>
+            <a href={link.link} target={'_blank'} rel={'noreferrer'}>
               <svg
                 className={'svg-fill'}
                 width={'24'}
