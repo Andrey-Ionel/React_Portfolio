@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Andrey-Ionel/React_Portfolio/issues"
   },
-  "homepage": "https://github.com/Andrey-Ionel/React_Portfolio#readme",
+  "homepage": "https://andrey-ionel.github.io/React_Portfolio/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
