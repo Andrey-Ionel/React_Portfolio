@@ -8,7 +8,9 @@ interface ScrollArrowProps {
   handleArrows: string;
 }
 
-export const ScrollArrow: FC<ScrollArrowProps> = ({ handleArrows }) => {
+export const ScrollArrow: FC<ScrollArrowProps> = ({
+  handleArrows,
+}): JSX.Element => {
   const scrollText = 'Scroll';
   const upText = 'UP';
   return (

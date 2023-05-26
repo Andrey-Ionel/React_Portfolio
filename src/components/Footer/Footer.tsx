@@ -9,7 +9,7 @@ interface FooterProps {
   handleArrows: string;
 }
 
-export const Footer: FC<FooterProps> = ({ handleArrows }) => {
+export const Footer: FC<FooterProps> = ({ handleArrows }): JSX.Element => {
   const emailMeText = 'email me';
   const wantToCollaborate = 'Want to collaborate?';
   const phoneText = '+38 063 688 14 26';

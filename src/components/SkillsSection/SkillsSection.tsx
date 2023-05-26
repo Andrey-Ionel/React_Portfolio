@@ -74,7 +74,7 @@ const skills: Skill[] = [
   },
 ];
 
-export const SkillsSection: FC = () => {
+export const SkillsSection: FC = (): JSX.Element => {
   const title = 'SKILLS';
   return (
     <div className={'skills'} id={'skills'}>

@@ -18,8 +18,10 @@ enum ArrowScroll {
   'down' = 'down',
   'up' = 'up',
 }
+type Title = 'Dark' | 'Light';
+type Class = 'wrapper dark-theme' | 'wrapper';
 
-export const Portfolio: FC = memo(() => {
+export const Portfolio: FC = memo((): JSX.Element => {
   const [darkTheme, setDarkTheme] = useState<boolean>(false);
 
   const [handleArrows, setHandleArrows] = useState<ArrowScroll>(
@@ -29,7 +31,7 @@ export const Portfolio: FC = memo(() => {
 
   const timerId = useRef<NodeJS.Timer | null>(null);
 
-  const scrollHandler = (e: DocumentEventMap['scroll']) => {
+  const scrollHandler = (e: DocumentEventMap['scroll']): void => {
     const target = e.target as Document;
     const screenBottom =
       target.documentElement.scrollHeight -
@@ -55,7 +57,7 @@ export const Portfolio: FC = memo(() => {
     };
   }, []);
 
-  const toggleTheme = useCallback(() => {
+  const toggleTheme = useCallback((): void => {
     setIsDisabled(true);
     setDarkTheme(!darkTheme);
     timerId.current = setTimeout(() => {
@@ -63,8 +65,8 @@ export const Portfolio: FC = memo(() => {
     }, 750);
   }, [darkTheme]);
 
-  const theme = darkTheme ? 'wrapper dark-theme' : 'wrapper';
-  const themeTitle = darkTheme ? 'Dark' : 'Light';
+  const theme: Class = darkTheme ? 'wrapper dark-theme' : 'wrapper';
+  const themeTitle: Title = darkTheme ? 'Dark' : 'Light';
 
   return (
     <div className={theme}>

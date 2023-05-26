@@ -8,18 +8,18 @@ interface ThemeButtonProps {
   title: string;
 }
 
+type Class = 'custom-button-disabled custom-button' | 'custom-button';
+
 export const CustomButton: FC<ThemeButtonProps> = ({
   toggleTheme,
   isDisabled,
   title,
-}) => {
+}): JSX.Element => {
+  const ButtonClass: Class = isDisabled
+    ? 'custom-button-disabled custom-button'
+    : 'custom-button';
   return (
-    <button
-      onClick={toggleTheme}
-      className={
-        isDisabled ? 'custom-button-disabled custom-button' : 'custom-button'
-      }
-      disabled={isDisabled}>
+    <button onClick={toggleTheme} className={ButtonClass} disabled={isDisabled}>
       <span>{title}</span>
     </button>
   );

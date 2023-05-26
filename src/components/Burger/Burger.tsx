@@ -53,7 +53,7 @@ const sectionNavigation: SectionNavigation[] = [
   },
 ];
 
-export const Burger: FC<BurgerProps> = ({ toggleBurgerMenu }) => {
+export const Burger: FC<BurgerProps> = ({ toggleBurgerMenu }): JSX.Element => {
   return (
     <>
       <BurgerButton toggleBurgerMenu={toggleBurgerMenu} />

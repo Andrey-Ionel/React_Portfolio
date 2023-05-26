@@ -6,7 +6,9 @@ interface BurgerButtonProps {
   toggleBurgerMenu: () => void;
 }
 
-export const BurgerButton: FC<BurgerButtonProps> = ({ toggleBurgerMenu }) => {
+export const BurgerButton: FC<BurgerButtonProps> = ({
+  toggleBurgerMenu,
+}): JSX.Element => {
   return (
     <div className={'burger-logo-container'} onClick={toggleBurgerMenu}>
       <a className={'burger-menu-button'}>

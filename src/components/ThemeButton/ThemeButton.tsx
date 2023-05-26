@@ -12,7 +12,7 @@ export const ThemeButton: FC<ThemeButtonProps> = ({
   toggleTheme,
   title,
   isDisabled,
-}) => {
+}): JSX.Element => {
   return (
     <div className={'wrap-btn'}>
       <button className={'btn'} onClick={toggleTheme} disabled={isDisabled}>

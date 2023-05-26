@@ -52,7 +52,7 @@ const externalLinksArray: socialNavigation[] = [
   },
 ];
 
-export const ExternalLinks: FC = () => {
+export const ExternalLinks: FC = (): JSX.Element => {
   return (
     <ul className={'links'}>
       {externalLinksArray.map(link => {

@@ -16,14 +16,16 @@ interface HeaderProps {
   isDisabled: boolean;
 }
 
+type BurgerClass = 'header menu-open' | 'header';
+
 export const Header: FC<HeaderProps> = ({
   handleArrows,
   themeTitle,
   toggleTheme,
   isDisabled,
-}) => {
+}): JSX.Element => {
   const [burger, setBurger] = useState<boolean>(false);
-  const burgerOpen = burger ? 'header menu-open' : 'header';
+  const burgerOpen: BurgerClass = burger ? 'header menu-open' : 'header';
 
   const toggleBurgerMenu = useCallback(() => {
     setBurger(!burger);

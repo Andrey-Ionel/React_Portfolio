@@ -41,7 +41,7 @@ const allExperience: Experience[] = [
   },
 ];
 
-export const ExperienceSection: FC = () => {
+export const ExperienceSection: FC = (): JSX.Element => {
   const title = 'EXPERIENCE';
   const certificateText = 'certificate';
   return (
